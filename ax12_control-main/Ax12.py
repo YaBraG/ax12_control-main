@@ -66,7 +66,7 @@ class Ax12:
 
     PROTOCOL_VERSION = 1.0
     BAUDRATE = 1000000  # Dynamixel default baudrate
-    DEVICENAME = 'COM14'  # e.g 'COM3' windows or '/dev/ttyUSB0' for linux
+    DEVICENAME = '/dev/ttyUSB0'  # e.g 'COM3' windows or '/dev/ttyUSB0' for linux
     DEBUG = True
 
     def __init__(self, motor_id):
@@ -142,7 +142,7 @@ class Ax12:
         return self.get_register1(ADDR_AX_BAUD_RATE)
 
     def set_baudrate(self, baudrate):
-        
+
         self.set_register1(ADDR_AX_BAUD_RATE, baudrate)
 
         if self.DEBUG:
@@ -161,7 +161,8 @@ class Ax12:
         """Sets the lower limit of motor angle [512-0]"""
         self.set_register2(ADDR_AX_CW_ANGLE_LIMIT_L, angle_limit)
         if self.DEBUG:
-            self.print_status("cw angle limit of ", self.id, self.get_cw_angle_limit())
+            self.print_status("cw angle limit of ", self.id,
+                              self.get_cw_angle_limit())
 
     def get_ccw_angle_limit(self):
         return self.get_register2(ADDR_AX_CCW_ANGLE_LIMIT_L)
@@ -170,7 +171,8 @@ class Ax12:
         """Sets the upper limit of motor angle [512-1023]"""
         self.set_register2(ADDR_AX_CCW_ANGLE_LIMIT_L, angle_limit)
         if self.DEBUG:
-            self.print_status("ccw angle limit of ", self.id, self.get_ccw_angle_limit())
+            self.print_status("ccw angle limit of ", self.id,
+                              self.get_ccw_angle_limit())
 
     def get_min_voltage_limit(self):
         return self.get_register1(ADDR_AX_MIN_LIMIT_VOLTAGE)
@@ -217,12 +219,10 @@ class Ax12:
 
         """
         self.set_register1(ADDR_AX_TORQUE_ENABLE, torque_bool)
-        
-        if self.DEBUG: 
-            self.print_status("Torque enable ", self.id, self.get_torque_enable())
 
-
-
+        if self.DEBUG:
+            self.print_status("Torque enable ", self.id,
+                              self.get_torque_enable())
 
     def set_led(self, led_bool):
         """Sets Motor Led; 0 => OFF  1 => ON ."""
@@ -259,8 +259,9 @@ class Ax12:
         """Write goal position."""
         self.set_register2(ADDR_AX_GOAL_POSITION_L, goal_pos)
 
-        if self.DEBUG: 
-            self.print_status("Position of ", self.id, self.get_goal_position())
+        if self.DEBUG:
+            self.print_status("Position of ", self.id,
+                              self.get_goal_position())
 
     def get_moving_speed(self):
         """Returns moving speed to goal position [0-1023]."""
@@ -269,10 +270,10 @@ class Ax12:
     def set_moving_speed(self, moving_speed):
         """Set the moving speed to goal position [0-1023]."""
         self.set_register2(ADDR_AX_GOAL_SPEED_L, moving_speed)
-        
-        if self.DEBUG:
-            self.print_status("Moving speed of ", self.id, self.get_moving_speed())
 
+        if self.DEBUG:
+            self.print_status("Moving speed of ", self.id,
+                              self.get_moving_speed())
 
     def get_torque_limit(self):
         return self.get_register2(ADDR_AX_TORQUE_LIMIT_L)
@@ -297,15 +298,13 @@ class Ax12:
         """Enable torque for motor."""
         self.set_register1(ADDR_AX_TORQUE_ENABLE, 1)
         if self.DEBUG:
-            print("Torque has been successfully enabled for dxl ID: %d" % self.id) 
-
+            print("Torque has been successfully enabled for dxl ID: %d" % self.id)
 
     def disable_torque(self):
         """Disable torque."""
         self.set_register1(ADDR_AX_TORQUE_ENABLE, 0)
-        if self.DEBUG: 
+        if self.DEBUG:
             print("Torque has been successfully disabled for dxl ID: %d" % self.id)
-
 
     @classmethod
     def open_port(cls):
@@ -347,7 +346,7 @@ class Ax12:
 
     @staticmethod
     def raw2deg(delta_raw):
-        return round(delta_raw*(300/1023),2)
+        return round(delta_raw*(300/1023), 2)
 
     @staticmethod
     def deg2raw(delta_deg):
@@ -355,4 +354,4 @@ class Ax12:
 
     @staticmethod
     def print_status(dxl_property, dxl_id, value):
-            print(dxl_property +  "dxl ID: %d set to %d " % (dxl_id, value))
+        print(dxl_property + "dxl ID: %d set to %d " % (dxl_id, value))
