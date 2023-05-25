@@ -25,8 +25,8 @@ def user_input():
 
 def main(motor_object):
     """ sets goal position based on user input """
-    bool_test = True
-    while bool_test:
+    # bool_test = True
+    while 1:
 
         print("\nPosition of dxl ID: %d is %d " %
               (motor_object.id, motor_object.get_present_position()))
@@ -35,7 +35,7 @@ def main(motor_object):
         motor_object.set_goal_position(input_pos)
         print("Position of dxl ID: %d is now: %d " %
               (motor_object.id, motor_object.get_present_position()))
-        bool_test = user_input()
+        # bool_test = user_input()
 
 
 # pass in AX12 object
