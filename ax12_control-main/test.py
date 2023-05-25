@@ -11,23 +11,22 @@ Ax12.connect()
 # create AX12 instance with ID 10
 motor_id = 2
 my_dxl = Ax12(motor_id)
-my_dxl.set_moving_speed(200)
+my_dxl.set_moving_speed(10230)
 
 
-def user_input():
-    """Check to see if user wants to continue"""
-    ans = input('Continue? : y/n ')
-    if ans == 'n':
-        return False
-    else:
-        return True
+# def user_input():
+#     """Check to see if user wants to continue"""
+#     ans = input('Continue? : y/n ')
+#     if ans == 'n':
+#         return False
+#     else:
+#         return True
 
 
 def main(motor_object):
     """ sets goal position based on user input """
     # bool_test = True
     while 1:
-
         print("\nPosition of dxl ID: %d is %d " %
               (motor_object.id, motor_object.get_present_position()))
         # desired angle input
