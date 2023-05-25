@@ -11,7 +11,7 @@ Ax12.connect()
 # create AX12 instance with ID 10
 motor_id = 2
 my_dxl = Ax12(motor_id)
-my_dxl.set_moving_speed(10230)
+my_dxl.set_moving_speed(200)
 
 
 # def user_input():
