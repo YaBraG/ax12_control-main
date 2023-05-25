@@ -1,7 +1,7 @@
 from Ax12 import Ax12
 
 # e.g 'COM3' windows or '/dev/ttyUSB0' for Linux
-Ax12.DEVICENAME = 'COM14'
+Ax12.DEVICENAME = '/dev/ttyUSB0'
 
 Ax12.BAUDRATE = 1000000
 
