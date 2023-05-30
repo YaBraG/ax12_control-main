@@ -3,7 +3,7 @@ from Ax12 import Ax12
 # e.g 'COM3' windows or '/dev/ttyUSB0' for Linux
 Ax12.DEVICENAME = '/dev/ttyUSB0'
 
-Ax12.BAUDRATE = 1_000_000
+Ax12.BAUDRATE = 1000000
 
 # sets baudrate and opens com port
 Ax12.connect()
