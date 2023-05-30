@@ -14,13 +14,13 @@ my_dxl = Ax12(motor_id)
 my_dxl.set_moving_speed(200)
 
 
-def user_input():
-    """Check to see if user wants to continue"""
-    ans = input('Continue? : y/n ')
-    if ans == 'n':
-        return False
-    else:
-        return True
+# def user_input():
+#     """Check to see if user wants to continue"""
+#     ans = input('Continue? : y/n ')
+#     if ans == 'n':
+#         return False
+#     else:
+#         return True
 
 
 def main(motor_object):
@@ -35,7 +35,7 @@ def main(motor_object):
         motor_object.set_goal_position(input_pos)
         print("Position of dxl ID: %d is now: %d " %
               (motor_object.id, motor_object.get_present_position()))
-        bool_test = user_input()
+      #   bool_test = user_input()
 
 
 # pass in AX12 object
