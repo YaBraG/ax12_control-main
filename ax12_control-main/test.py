@@ -8,7 +8,7 @@ Ax12.BAUDRATE = 1000000
 # sets baudrate and opens com port
 Ax12.connect()
 
-# create AX12 instance with ID 10
+# create AX12 instance with ID 2
 motor_id = 2
 my_dxl = Ax12(motor_id)
 my_dxl.set_moving_speed(200)
