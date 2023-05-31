@@ -33,6 +33,7 @@ sio = socketio.Client()
 @sio.event
 def connect():
     print('connection established')
+    sio.emit("ID", 'python-servo-client')
 
 
 @sio.event
