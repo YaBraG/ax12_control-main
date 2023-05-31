@@ -48,10 +48,10 @@ def disconnect():
 
 @sio.on('mouse-order')
 def on_message(data):
-    print(data)
+    #     print(data)
     angle = (float(data))
-    print(angle)
-#     my_dxl.set_goal_position(int(data))
+#     print(angle)
+    my_dxl.set_goal_position(angle)
 
 
 def main(motor_object):
