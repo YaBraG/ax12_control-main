@@ -12,11 +12,16 @@ Ax12.BAUDRATE = 1000000
 Ax12.connect()
 
 # create AX12 instance with ID 2
-motor_id = 2
-my_dxl = Ax12(motor_id)
-my_dxl.set_moving_speed(1023)
+motor1 = 1
+motor2 = 2
+my_dxl1 = Ax12(motor1)
+my_dxl2 = Ax12(motor2)
 
-angle = 0
+my_dxl1.set_moving_speed(1023)
+my_dxl2.set_moving_speed(1023)
+
+angle1 = 0
+angle2 = 0
 
 # def user_input():
 #     """Check to see if user wants to continue"""
@@ -52,15 +57,17 @@ def on_message(data):
     print(data)
     angle = (int(data))
 #     print(angle)
-    my_dxl.set_goal_position(angle)
+    my_dxl1.set_goal_position(angle)
 
 
 @sio.on('mouse-order')
 def on_message(pitch, yaw):
     print(pitch, yaw)
-    angle = (int(pitch))
+    angle1 = (int(pitch))
+    angle2 = (int(yaw))
 #     print(angle)
-    my_dxl.set_goal_position(angle)
+    my_dxl1.set_goal_position(angle1)
+    my_dxl2.set_goal_position(angle2)
 
 
 # def main(motor_object):
