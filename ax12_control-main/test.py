@@ -46,6 +46,14 @@ def disconnect():
     print('disconnected from server')
 
 
+@sio.on('test-order')
+def on_message(data):
+    #     print(data)
+    angle = (int(data))
+#     print(angle)
+    my_dxl.set_goal_position(angle)
+
+
 @sio.on('mouse-order')
 def on_message(data):
     #     print(data)
