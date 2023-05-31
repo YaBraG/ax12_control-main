@@ -54,17 +54,17 @@ def on_message(data):
     my_dxl.set_goal_position(angle)
 
 
-def main(motor_object):
-    """ sets goal position based on user input """
-    bool_test = True
-    while bool_test:
-        print("\nPosition of dxl ID: %d is %d " %
-              (motor_object.id, motor_object.get_present_position()))
-        # desired angle input
-        input_pos = angle
-        motor_object.set_goal_position(input_pos)
-        print("Position of dxl ID: %d is now: %d " %
-              (motor_object.id, motor_object.get_present_position()))
+# def main(motor_object):
+#     """ sets goal position based on user input """
+#     bool_test = True
+#     while bool_test:
+#         print("\nPosition of dxl ID: %d is %d " %
+#               (motor_object.id, motor_object.get_present_position()))
+#         # desired angle input
+#         input_pos = angle
+#         motor_object.set_goal_position(input_pos)
+#         print("Position of dxl ID: %d is now: %d " %
+#               (motor_object.id, motor_object.get_present_position()))
 
     # return motor_object.id
     #   bool_test = user_input()
