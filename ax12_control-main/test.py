@@ -78,5 +78,5 @@ my_dxl.set_torque_enable(0)
 Ax12.disconnect()
 
 
-sio.connect('http://192.168.2.12:3000')
+sio.connect('http://192.168.2.11:3000')
 sio.wait()
