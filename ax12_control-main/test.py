@@ -49,6 +49,8 @@ def disconnect():
 @sio.on('mouse-order')
 def on_message(data):
     print(data)
+    angle = (int(data))
+    print(angle)
 #     my_dxl.set_goal_position(int(data))
 
 
