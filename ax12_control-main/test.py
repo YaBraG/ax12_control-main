@@ -48,7 +48,7 @@ def disconnect():
 
 @sio.on('mouse-order')
 def on_message(data):
-    print(type(data))
+    print(data)
 #     my_dxl.set_goal_position(int(data))
 
 
