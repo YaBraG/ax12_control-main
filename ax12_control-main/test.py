@@ -48,7 +48,7 @@ def disconnect():
 
 @sio.on('test-order')
 def on_message(data):
-    #     print(data)
+    print(data)
     angle = (int(data))
 #     print(angle)
     my_dxl.set_goal_position(angle)
