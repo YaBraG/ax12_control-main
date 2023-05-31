@@ -47,7 +47,7 @@ def disconnect():
     print('disconnected from server')
 
 
-@sio.on('test-order')
+@sio.on('order')
 def on_message(data):
     print(data)
     angle = (int(data))
