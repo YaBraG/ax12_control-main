@@ -56,9 +56,9 @@ def on_message(data):
 
 
 @sio.on('mouse-order')
-def on_message(data):
-    #     print(data)
-    angle = (int(data))
+def on_message(pitch, yaw):
+    print(pitch, yaw)
+    angle = (int(pitch))
 #     print(angle)
     my_dxl.set_goal_position(angle)
 
