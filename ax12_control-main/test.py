@@ -57,11 +57,13 @@ def disconnect():
 #     angle = (int(data))
 #     my_dxl1.set_goal_position(angle)
 
-@sio.on ('h-order')
-def on_message(h)
-    print (h)
+
+@sio.on('h-order')
+def on_message(h):
+    print(h)
     header = (int(h))
     my_dxl1.set_goal_position(header)
+
 
 @sio.on('mouse-order')
 def on_message(pitch, yaw):
