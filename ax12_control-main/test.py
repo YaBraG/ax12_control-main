@@ -62,6 +62,8 @@ def disconnect():
 def on_message(h):
     print(h)
     header = (int(h))
+    if (header > 1023):
+        header = 1023
     my_dxl1.set_goal_position(header)
 
 
